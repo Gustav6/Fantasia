@@ -41,17 +41,28 @@ public class Player : MonoBehaviour
     [Header("Player Logic")]
 
     [Tooltip("How high the gravity it will be on the player")]
-    [SerializeField] float gravity;
+    public float gravity;
     [Tooltip("The players velocity on the x and y axis")]
-    [SerializeField] Vector2 velocity;
+    public Vector2 velocity;
     #endregion
 
-    // Variables for the players sprite
-    bool canFlip = true;
+    #region Refrences For Box
+    [Header("Refrences For Box")]
+
+    [Tooltip("The Boxes velocity on the x axis")]
+    public float boxVelocity;
+    [Tooltip("Refrence to the box game object")]
+    public GameObject box;
+    #endregion
+
+    #region Player Sprite
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    #endregion
 
+    // A variabel to call the script Controller2D
     Controller2D controller;
+
     void Start()
     {
         controller = GetComponent<Controller2D>();
@@ -61,12 +72,11 @@ public class Player : MonoBehaviour
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity)) * minJumpHeight;
-        print("Gravity: " + gravity + " Jump Velocity: " + maxJumpVelocity);
     }
     void Update()
     {
         bool flipSprite = (spriteRenderer.flipX ? (velocity.x > 0.01f) : (velocity.x < -0.01f));
-        if (flipSprite && canFlip)
+        if (flipSprite)
         {
             spriteRenderer.flipX = !spriteRenderer.flipX;
         }
@@ -90,6 +100,19 @@ public class Player : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move (velocity * Time.deltaTime);
 
+        if (controller.collisions.right)
+        {
+            boxVelocity = 5;
+        }
+        else if (controller.collisions.left)
+        {
+            boxVelocity = -5;
+        }
+        else
+        {
+            boxVelocity = 0;
+        }
+
         if (controller.collisions.above || controller.collisions.below)
         {
             velocity.y = 0f;
@@ -108,7 +131,7 @@ public class Player : MonoBehaviour
             velocity.y = maxJumpVelocity;
         }
 
-        if (context.canceled && velocity.y > 0)
+        if (context.canceled)
         {
             if (velocity.y > minJumpVelocity)
             {

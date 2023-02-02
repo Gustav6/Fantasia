@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class Controller2D : MonoBehaviour
@@ -42,6 +43,8 @@ public class Controller2D : MonoBehaviour
     // Get colliders for the player
     public CollisionInfo collisions;
     new BoxCollider2D collider2D;
+
+    public float boxVelocity = 5f;
 
     void Start()
     {
@@ -87,6 +90,11 @@ public class Controller2D : MonoBehaviour
 
             if (hit)
             {
+                if (hit.collider.CompareTag("Box"))
+                {
+                    hit.collider.GetComponent<BoxMovement>().MoveBox();
+                }
+
                 float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
 
                 if (i == 0f && slopeAngle <= maxClimgAngle)

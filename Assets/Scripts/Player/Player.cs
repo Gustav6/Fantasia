@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.Windows;
 
 [RequireComponent(typeof(Controller2D))]
@@ -61,8 +62,7 @@ public class Player : MonoBehaviour
     #endregion
 
     // A variabel to call the script Controller2D
-    Controller2D controller;
-
+    public Controller2D controller;
     void Start()
     {
         controller = GetComponent<Controller2D>();
@@ -81,37 +81,24 @@ public class Player : MonoBehaviour
             spriteRenderer.flipX = !spriteRenderer.flipX;
         }
 
-        animator.SetBool("Grounded", controller.collisions.below);
+        //animator.SetBool("Grounded", controller.collisions.below);
 
         if (!controller.collisions.below)
         {
-            animator.SetFloat("SpeedY", velocity.y);
+            //animator.SetFloat("SpeedY", velocity.y);
         }
         else
         {
-            animator.SetFloat("SpeedY", 0);
+            //animator.SetFloat("SpeedY", 0);
         }
 
-        animator.SetFloat("SpeedX", Mathf.Abs(xInput));
+        //animator.SetFloat("SpeedX", Mathf.Abs(xInput));
 
         float targetVelocityX = xInput * moveSpeed;
         velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmothing, (controller.collisions.below) ? accelerationTimeGrounded : accelerationTimeAirborne);
         velocity.y = Mathf.Clamp(velocity.y, -20, 20);
         velocity.y += gravity * Time.deltaTime;
         controller.Move (velocity * Time.deltaTime);
-
-        if (controller.collisions.right)
-        {
-            boxVelocity = 5;
-        }
-        else if (controller.collisions.left)
-        {
-            boxVelocity = -5;
-        }
-        else
-        {
-            boxVelocity = 0;
-        }
 
         if (controller.collisions.above || controller.collisions.below)
         {

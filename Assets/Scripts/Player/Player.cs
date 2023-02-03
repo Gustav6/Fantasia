@@ -8,7 +8,7 @@ using UnityEngine.Windows;
 [RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour
 {
-    #region Players Vertical Input/Movment
+    #region Players Vertical Movment
     [Header("Veritcal Movment")]
 
     [Tooltip("Maximum height the player can jump")]
@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     [SerializeField] float minJumpVelocity;
     #endregion
 
-    #region Players Horizontal Input/Movment
+    #region Players Horizontal Input & Movment
     [Header("Horizontal Movment")]
 
     [Tooltip("The acceleration then airborne on the x axis")]
@@ -38,8 +38,8 @@ public class Player : MonoBehaviour
     float xInput;
     #endregion
 
-    #region Player Logic
-    [Header("Player Logic")]
+    #region The Logic For The Player
+    [Header("Logic")]
 
     [Tooltip("How high the gravity it will be on the player")]
     public float gravity;
@@ -58,12 +58,13 @@ public class Player : MonoBehaviour
 
     #region Player Sprite
     private SpriteRenderer spriteRenderer;
-    private Animator animator;
+    Animator animator;
     #endregion
 
     // A variabel to call the script Controller2D
     public Controller2D controller;
     void Start()
+
     {
         controller = GetComponent<Controller2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -73,6 +74,7 @@ public class Player : MonoBehaviour
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity)) * minJumpHeight;
     }
+
     void Update()
     {
         bool flipSprite = (spriteRenderer.flipX ? (velocity.x > 0.01f) : (velocity.x < -0.01f));

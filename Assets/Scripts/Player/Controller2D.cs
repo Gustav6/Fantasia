@@ -8,12 +8,6 @@ using UnityEngine.InputSystem.XR;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Controller2D : MonoBehaviour
 {
-    // What layer that can be collided with from the player
-    public LayerMask collisionMask;
-
-    // Skin width means that raycast start a little inside player, so that collisions dont get messed up
-    const float skinWidth = .015f;
-
     #region Raycasts from player
     [Header("Raycasts from player")]
 
@@ -21,6 +15,9 @@ public class Controller2D : MonoBehaviour
     [SerializeField] int horizontalRayCount = 4;
     [Tooltip("The amount of raycasts coming out from players top and bottom")]
     [SerializeField] int verticalRayCount = 4;
+
+    // Skin width means that raycast start a little inside player, so that collisions dont get messed up
+    const float skinWidth = .015f;
     #endregion
 
     #region Handling Slopes
@@ -39,6 +36,9 @@ public class Controller2D : MonoBehaviour
 
     // The origin from where the raycast are cast from 
     RaycastOrigins raycastOrigins;
+
+    // What layer that can be collided with from the player
+    public LayerMask collisionMask;
 
     // Get colliders for the player
     public CollisionInfo collisions;
@@ -250,6 +250,7 @@ public class Controller2D : MonoBehaviour
         public Vector2 topLeft, topRight;
         public Vector2 bottomLeft, bottomRight;
     }
+
     public struct CollisionInfo
     {
         public bool above, below;

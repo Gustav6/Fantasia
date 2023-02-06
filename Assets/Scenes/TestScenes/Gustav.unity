@@ -398,6 +398,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 4344c779-cf30-4bb3-9383-065379510792
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 12f3473b-6801-4382-aa6d-a8790d80afad
+    m_ActionName: Player/Reset[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

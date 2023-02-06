@@ -31,6 +31,12 @@ public class ControllBox : MonoBehaviour
 
         velocity.y = Mathf.Clamp(velocity.y, -20, 20);
         velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
+
+        if (controller.collisions.above || controller.collisions.below)
+        {
+            velocity.y = 0f;
+        }
 
     }
 }

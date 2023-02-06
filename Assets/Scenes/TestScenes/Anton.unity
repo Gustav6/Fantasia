@@ -541,7 +541,19 @@ MonoBehaviour:
     m_ActionId: 4344c779-cf30-4bb3-9383-065379510792
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 402952426}
+        m_TargetAssemblyTypeName: Checkpoints, Assembly-CSharp
+        m_MethodName: ResetLevel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 12f3473b-6801-4382-aa6d-a8790d80afad
     m_ActionName: Player/Reset[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
@@ -615,7 +627,6 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 384
-  boxVelocity: 5
 --- !u!114 &402952424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -892,7 +903,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 1.1419754}

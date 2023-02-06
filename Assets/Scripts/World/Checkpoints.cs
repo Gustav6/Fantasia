@@ -13,10 +13,12 @@ public class Checkpoints : MonoBehaviour
     {
         respawnPoint = Player.transform.position;
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         respawnPoint = Player.transform.position;
     }
+
     public void ResetLevel(InputAction.CallbackContext context)
     {
         if (context.performed)

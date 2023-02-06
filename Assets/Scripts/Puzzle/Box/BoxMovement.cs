@@ -32,6 +32,8 @@ public class BoxMovement : MonoBehaviour
     // A variabel to call the script Controller2D
     Controller2D controller;
 
+    [SerializeField] float timer = 0;
+
     void Start()
     {
         controller = GetComponent<Controller2D>();
@@ -48,18 +50,28 @@ public class BoxMovement : MonoBehaviour
 
         if (!player.GetComponent<Controller2D>().collisions.left || !player.GetComponent<Controller2D>().collisions.right)
         {
-            if (velocity.x < 0.1f && velocity.x > -0.1f)
+            timer += Time.deltaTime;
+
+            if (timer >= 0.02f)
             {
-                velocity.x = 0f;
+                if (velocity.x < 0.1f && velocity.x > -0.1f)
+                {
+                    velocity.x = 0f;
+                }
+                else if (velocity.x > 0)
+                {
+                    velocity.x *= 0.9f;
+                }
+                else if (velocity.x < 0)
+                {
+                    velocity.x *= 0.9f;
+                }
             }
-            else if (velocity.x > 0)
-            {
-                velocity.x -= deAcceleration * Time.deltaTime;
-            }
-            else if (velocity.x < 0)
-            {
-                velocity.x += deAcceleration * Time.deltaTime;
-            }
+        }
+
+        if (player.GetComponent<Controller2D>().collisions.left || player.GetComponent<Controller2D>().collisions.right)
+        {
+            timer = 0;
         }
 
         if (controller.collisions.above || controller.collisions.below)

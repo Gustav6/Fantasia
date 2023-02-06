@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     [Tooltip("Acceleration for the player on the x axis")]
     [SerializeField] float velocityXSmothing;
     // players input on the x axis
-    float xInput;
+    public float xInput;
     #endregion
 
     #region The Logic For The Player

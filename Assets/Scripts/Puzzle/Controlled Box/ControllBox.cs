@@ -25,10 +25,14 @@ public class ControllBox : MonoBehaviour
 
     [SerializeField] bool isControlling = false;
 
+    CinemachineVirtualCamera cinemachine;
+
     void Start()
     {
+        cinemachine = GetComponent<CinemachineVirtualCamera>();
         controller = GetComponent<Controller2D>();
         player = GameObject.FindGameObjectWithTag("Player");
+        controllBox = GameObject.FindGameObjectWithTag("ControllBox");
     }
 
     void Update()
@@ -38,6 +42,12 @@ public class ControllBox : MonoBehaviour
         velocity.y = Mathf.Clamp(velocity.y, -20, 20);
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+
+        if (isControlling)
+        {
+
+        }
 
         if (controller.collisions.above || controller.collisions.below)
         {

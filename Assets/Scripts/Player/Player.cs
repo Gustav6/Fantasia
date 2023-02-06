@@ -100,13 +100,19 @@ public class Player : MonoBehaviour
         velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmothing, (controller.collisions.below) ? accelerationTimeGrounded : accelerationTimeAirborne);
         velocity.y = Mathf.Clamp(velocity.y, -20, 20);
         velocity.y += gravity * Time.deltaTime;
-        controller.Move (velocity * Time.deltaTime);
+        controller.Move(velocity * Time.deltaTime);
 
         if (controller.collisions.above || controller.collisions.below)
         {
             velocity.y = 0f;
         }
     }
+
+    /*
+    private void FixedUpdate()
+    {
+        controller.Move(velocity * Time.fixedDeltaTime);
+    }*/
 
     public void XInput(InputAction.CallbackContext context)
     {

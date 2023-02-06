@@ -48,7 +48,7 @@ public class BoxMovement : MonoBehaviour
 
         if (!player.GetComponent<Controller2D>().collisions.left || !player.GetComponent<Controller2D>().collisions.right)
         {
-            if (velocity.x < 0.01f && velocity.x > -0.01f)
+            if (velocity.x < 0.1f && velocity.x > -0.1f)
             {
                 velocity.x = 0f;
             }
@@ -68,6 +68,12 @@ public class BoxMovement : MonoBehaviour
         }
     }
 
+    /*
+    private void FixedUpdate()
+    {
+        controller.Move(velocity * Time.fixedDeltaTime);
+    }*/
+
     public void MoveBox()
     {
         if (player.GetComponent<Controller2D>().collisions.right)
@@ -79,4 +85,11 @@ public class BoxMovement : MonoBehaviour
             velocity.x = -boxMoveSpeed;
         }
     }
+
+    /*
+    public void MoveBox(float direction)
+    {
+        velocity.x = direction;
+        controller.Move(velocity * Time.deltaTime);
+    }*/
 }

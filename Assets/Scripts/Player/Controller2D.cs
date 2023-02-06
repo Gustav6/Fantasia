@@ -44,10 +44,12 @@ public class Controller2D : MonoBehaviour
     public CollisionInfo collisions;
     new BoxCollider2D collider2D;
 
-    public float boxVelocity = 5f;
+    GameObject box;
 
     void Start()
     {
+        box = GameObject.FindGameObjectWithTag("Box");
+
         collider2D = GetComponent<BoxCollider2D>();
         CalculateRaySpacing();
     }
@@ -84,16 +86,27 @@ public class Controller2D : MonoBehaviour
         {
             Vector2 rayOrigin = (directionX == -1) ? raycastOrigins.bottomLeft : raycastOrigins.bottomRight;
             rayOrigin += Vector2.up * (horizonalRaySpacing * i);
+
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * directionX, rayLength, collisionMask);
+
+            if (hit && hit.collider.gameObject.CompareTag("Box"))
+            {
+                hit.collider.GetComponent<BoxMovement>().MoveBox();
+            }
+
+            hit = Physics2D.Raycast(rayOrigin, Vector2.right * directionX, rayLength, collisionMask);
 
             Debug.DrawRay(rayOrigin, Vector2.right * directionX, Color.red);
 
             if (hit)
             {
-                if (hit.collider.CompareTag("Box"))
+                /*
+                RaycastHit2D[] hit1 = Physics2D.RaycastAll(rayOrigin, Vector2.right * directionX, rayLength, LayerMask.GetMask("Box"));
+
+                for (int i1 = CompareTag("Player") ? 0 : 1; i1 < hit1.Length; i1++)
                 {
-                    hit.collider.GetComponent<BoxMovement>().MoveBox();
-                }
+                    hit1[i1].collider.GetComponent<BoxMovement>().MoveBox(directionX);
+                }*/
 
                 float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
 
@@ -138,7 +151,7 @@ public class Controller2D : MonoBehaviour
 
         for (int i = 0; i < verticalRayCount; i++)
         {
-            Vector2 rayOrigin = (directionY == -1)?raycastOrigins.bottomLeft:raycastOrigins.topLeft;
+            Vector2 rayOrigin = (directionY == -1) ? raycastOrigins.bottomLeft : raycastOrigins.topLeft;
             rayOrigin += Vector2.right * (verticalRaySpacing * i + velocity.x);
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up * directionY, rayLength, collisionMask);
             

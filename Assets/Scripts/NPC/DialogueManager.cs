@@ -5,17 +5,21 @@ using UnityEngine.UI;
 
 public class DialogueManager: MonoBehaviour
 {
+    #region Dialogue Variables
     private const float V = 0f;
     public Image actorImage;
     public Text actorName;
     public Text messageText;
     public RectTransform backroundBox;
     public Rigidbody2D rb;
+    #endregion
 
+    #region Current Messages
     Message[] currentMessages;
     Actor[] currentActors;
     int activeMessage = 0;
     public static bool isActive = false;
+    #endregion
 
     public void OpenDialogue(Message[] messages, Actor[] actors)
     {
@@ -25,9 +29,9 @@ public class DialogueManager: MonoBehaviour
         isActive = true;
 
         Debug.Log("Started Conversation! Loaded Messages: " + messages.Length);
-        rb.constraints = RigidbodyConstraints2D.FreezeAll;
         DispayMessage();
         backroundBox.LeanScale(Vector3.one, 0.5f);
+        //startar konverastionen
     }
 
 
@@ -39,6 +43,7 @@ public class DialogueManager: MonoBehaviour
         Actor actorToDisplay = currentActors[messageToDisplay.actorId];
         actorName.text = actorToDisplay.name;
         actorImage.sprite = actorToDisplay.sprite;
+        //Ser till att få upp den på skärmen så man kan se det.
     }
 
     public void NextMessage()
@@ -51,11 +56,10 @@ public class DialogueManager: MonoBehaviour
         else
         {
             Debug.Log("Conversation ended");
-            rb.constraints = RigidbodyConstraints2D.None;
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             backroundBox.LeanScale(Vector3.zero, 0.5f).setEaseInOutExpo();
             isActive = false;
         }
+        //Går vidare i konverastionen. 
     }
 
 

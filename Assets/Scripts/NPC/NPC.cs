@@ -10,5 +10,6 @@ public class NPC : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") == true)
             trigger.startDialogue();
+        //Startar dialoguen när man går in i NPCs hitbox
     }
 }

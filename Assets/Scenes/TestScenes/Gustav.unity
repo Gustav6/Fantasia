@@ -402,6 +402,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 12f3473b-6801-4382-aa6d-a8790d80afad
     m_ActionName: Player/Reset[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 749067214}
+        m_TargetAssemblyTypeName: ControllBox, Assembly-CSharp
+        m_MethodName: Controll
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 37cd0330-cecb-4371-96ae-656fbd85bbec
+    m_ActionName: Player/Controll[/Keyboard/1]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -623,7 +639,7 @@ GameObject:
   - component: {fileID: 749067212}
   m_Layer: 7
   m_Name: Controlled Box
-  m_TagString: Untagged
+  m_TagString: ControllBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -687,7 +703,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: 0
   velocity: {x: 0, y: 0}
-  player: {fileID: 0}
+  player: {fileID: 560026199}
+  controllBox: {fileID: 749067211}
+  isControlling: 0
 --- !u!212 &749067215
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -65,14 +65,6 @@ public class Controller2D : RaycastController
 
             if (hit)
             {
-                /*
-                RaycastHit2D[] hit1 = Physics2D.RaycastAll(rayOrigin, Vector2.right * directionX, rayLength, LayerMask.GetMask("Box"));
-
-                for (int i1 = CompareTag("Player") ? 0 : 1; i1 < hit1.Length; i1++)
-                {
-                    hit1[i1].collider.GetComponent<BoxMovement>().MoveBox(directionX);
-                }*/
-
                 float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
 
                 if (i == 0f && slopeAngle <= maxClimgAngle)

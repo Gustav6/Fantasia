@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Controll",
+                    "type": "Button",
+                    "id": "37cd0330-cecb-4371-96ae-656fbd85bbec",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -302,6 +311,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "de70b48f-b383-4d62-9353-c09e79d883ed",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Controll",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

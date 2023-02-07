@@ -1,6 +1,8 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ControllBox : MonoBehaviour
 {
@@ -16,13 +18,21 @@ public class ControllBox : MonoBehaviour
     // A call for the player so i can refrence the player and get the gravity
     public GameObject player;
 
+    public GameObject controllBox;
+
     // A variabel to call the script Controller2D
     Controller2D controller;
 
+    [SerializeField] bool isControlling = false;
+
+    CinemachineVirtualCamera cinemachine;
+
     void Start()
     {
+        cinemachine = GetComponent<CinemachineVirtualCamera>();
         controller = GetComponent<Controller2D>();
         player = GameObject.FindGameObjectWithTag("Player");
+        controllBox = GameObject.FindGameObjectWithTag("ControllBox");
     }
 
     void Update()
@@ -33,10 +43,24 @@ public class ControllBox : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
+
+        if (isControlling)
+        {
+
+        }
+
         if (controller.collisions.above || controller.collisions.below)
         {
             velocity.y = 0f;
         }
 
+    }
+
+    public void Controll(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            isControlling = !isControlling;
+        }
     }
 }

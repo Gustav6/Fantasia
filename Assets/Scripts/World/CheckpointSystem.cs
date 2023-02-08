@@ -6,7 +6,13 @@ using UnityEngine.InputSystem;
 public class CheckpointSystem : MonoBehaviour
 {
     public Transform currentRespawnPoint;
-    public Player player;
+    public GameObject player;
+
+    private void Start()
+    {
+        currentRespawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform;
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     public void ResetLevel(InputAction.CallbackContext context)
     {

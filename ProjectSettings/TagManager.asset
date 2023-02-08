@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Box
   - ControllBox
-  - Spawn
+  - PressurePlate
   layers:
   - Default
   - TransparentFX

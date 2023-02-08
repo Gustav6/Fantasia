@@ -15,6 +15,7 @@ public class RaycastController : MonoBehaviour
     public int verticalRayCount = 4;
 
     // Skin width means that raycast start a little inside player, so that collisions dont get messed up
+    [HideInInspector]
     public const float skinWidth = .015f;
     #endregion
 

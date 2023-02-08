@@ -63,8 +63,10 @@ public class Player : MonoBehaviour
 
     // A variabel to call the script Controller2D
     public Controller2D controller;
-    void Start()
 
+    public bool isControlling = false;
+
+    void Start()
     {
         controller = GetComponent<Controller2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -77,6 +79,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+
         bool flipSprite = (spriteRenderer.flipX ? (velocity.x > 0.01f) : (velocity.x < -0.01f));
         if (flipSprite)
         {
@@ -116,22 +119,37 @@ public class Player : MonoBehaviour
 
     public void XInput(InputAction.CallbackContext context)
     {
-        xInput = context.ReadValue<Vector2>().x;
+        if (!isControlling)
+        {
+            xInput = context.ReadValue<Vector2>().x;
+        }
     }
 
     public void YInput(InputAction.CallbackContext context)
     {
-        if (context.started && controller.collisions.below)
+        if (!isControlling)
         {
-            velocity.y = maxJumpVelocity;
-        }
-
-        if (context.canceled)
-        {
-            if (velocity.y > minJumpVelocity)
+            if (context.started && controller.collisions.below)
             {
-                velocity.y = minJumpVelocity;
+                velocity.y = maxJumpVelocity;
             }
+
+            if (context.canceled)
+            {
+                if (velocity.y > minJumpVelocity)
+                {
+                    velocity.y = minJumpVelocity;
+                }
+            }
+        }
+    }
+    public void Controll(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            isControlling = !isControlling;
+
+            xInput = 0f;
         }
     }
 }

@@ -8,8 +8,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 893f065d19b0cd84aa262f9d943a7e72
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/Anton.unity
+    guid: 4ca03d8658b6a1444a9f71bcb41b9bf7
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 0db014f5aba8202459844520eb97be47, type: 2}

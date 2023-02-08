@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Box
   - ControllBox
+  - Spawn
   layers:
   - Default
   - TransparentFX

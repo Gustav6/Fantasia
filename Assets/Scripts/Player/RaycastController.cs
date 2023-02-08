@@ -33,8 +33,11 @@ public class RaycastController : MonoBehaviour
     // The origin from where the raycast are cast from 
     public RaycastOrigins raycastOrigins;
 
+    public GameObject player;
+
     public virtual void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         collider = GetComponent<BoxCollider2D>();
     }
 

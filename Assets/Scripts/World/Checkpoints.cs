@@ -7,22 +7,44 @@ using UnityEngine.Windows;
 
 public class Checkpoints : MonoBehaviour
 {
-    public GameObject Player;
-    private Vector3 respawnPoint;
-    void start()
+    public Transform currentRespawnPoint;
+
+    public Vector3 respawnPoint;   
+
+    public float rayLength = 1000f;
+    public GameObject player;
+
+    public LayerMask collisions;
+
+    
+    void Start()
     {
-        respawnPoint = Player.transform.position;
+        player = GameObject.FindGameObjectWithTag("Player");
+        currentRespawnPoint = transform.parent.GetComponent<CheckpointSystem>().currentRespawnPoint;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void Update()
     {
-        respawnPoint = Player.transform.position;
+        RaycastHit2D hit = Physics2D.Raycast(player.transform.position, Vector2.down, rayLength, collisions);
+
+        Debug.DrawRay(player.transform.position, Vector2.down, Color.green);
     }
-    public void ResetLevel(InputAction.CallbackContext context)
+
+
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (context.performed)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Player.transform.position = respawnPoint;
-            Debug.Log("H");
+            RaycastHit2D hit = Physics2D.Raycast(player.transform.position, Vector2.down, rayLength, collisions);
+
+            respawnPoint = hit.point;
+            respawnPoint.y += 0.6f;
+
+            currentRespawnPoint.transform.position = respawnPoint;
+
+            print($"Respawn point: {hit.point}");
         }
+
     }
+
 }

@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Box
   - ControllBox
-  - Spawn
+  - PressurePlate
   layers:
   - Default
   - TransparentFX
@@ -43,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 1057003455
     locked: 0

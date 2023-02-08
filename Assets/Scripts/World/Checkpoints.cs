@@ -20,16 +20,8 @@ public class Checkpoints : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        currentRespawnPoint = transform.parent.GetComponent<CheckpointSystem>().currentRespawnPoint;
+        currentRespawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform;
     }
-
-    private void Update()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(player.transform.position, Vector2.down, rayLength, collisions);
-
-        Debug.DrawRay(player.transform.position, Vector2.down, Color.green);
-    }
-
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -41,8 +33,6 @@ public class Checkpoints : MonoBehaviour
             respawnPoint.y += 0.6f;
 
             currentRespawnPoint.transform.position = respawnPoint;
-
-            print($"Respawn point: {hit.point}");
         }
 
     }

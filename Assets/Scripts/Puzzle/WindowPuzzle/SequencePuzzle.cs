@@ -5,25 +5,45 @@ using UnityEngine;
 
 public class SequencePuzzle : MonoBehaviour
 {
-    [SerializeField]
-    Text codeText;
-    string codeTextValue = " ";
-
+    private bool IsAtDoor = false;
+    
+    [SerializeField] private TMPro.TextMeshProUGUI CodeText;
+    string codeTextValue = "";
+    public string safeCode;
+    public GameObject CodePanel;
     void Update()
     {
-        codeText.text = codeTextValue;
-        if (codeTextValue == "1234")
+        CodeText.text = codeTextValue;
+        if (codeTextValue == safeCode)
         {
+            codeTextValue = "";
             Debug.Log("gg ez");
         }
-        if (codeTextValue.Length >= 5)
+
+        if (codeTextValue.Length >= 4)
         {
-            codeTextValue = " ";
+            codeTextValue = "";
         }
-  
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            IsAtDoor = true;
+        }
+
+
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        IsAtDoor = false;
+        CodePanel.SetActive(false);
+    }
+
     public void AddDigit(string digit)
     {
         codeTextValue += digit;
     }
+
 }

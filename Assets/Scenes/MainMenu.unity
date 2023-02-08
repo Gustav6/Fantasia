@@ -425,7 +425,7 @@ RectTransform:
   - {fileID: 1141297294}
   - {fileID: 49997977}
   m_Father: {fileID: 771592176}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -491,8 +491,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 771592182}
-        m_TargetAssemblyTypeName: ResolutionsMenu, Assembly-CSharp
+      - m_Target: {fileID: 771592181}
+        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetResolution
         m_Mode: 0
         m_Arguments:
@@ -915,12 +915,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300589042}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -959.626, y: -540, z: 0}
-  m_LocalScale: {x: 1.796875, y: 1.485, z: 1}
+  m_LocalPosition: {x: 41, y: -36, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 771592176}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &300589044
 SpriteRenderer:
@@ -1177,7 +1177,7 @@ RectTransform:
   m_Children:
   - {fileID: 608541294}
   m_Father: {fileID: 771592176}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2252,7 +2252,6 @@ GameObject:
   - component: {fileID: 771592178}
   - component: {fileID: 771592177}
   - component: {fileID: 771592181}
-  - component: {fileID: 771592182}
   m_Layer: 5
   m_Name: SettingsMenu
   m_TagString: Untagged
@@ -2273,11 +2272,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 13229756}
-  - {fileID: 300589043}
   - {fileID: 1717188357}
   - {fileID: 1975474832}
   - {fileID: 64896086}
   - {fileID: 390271487}
+  - {fileID: 300589043}
   m_Father: {fileID: 1436446397}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2332,7 +2331,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2371,20 +2370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f9618aeffbb05e439a4f13dbb0e7c7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 0}
---- !u!114 &771592182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 771592175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85029b7d91fd68c4682817735a71feab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   resolutionDropdown: {fileID: 64896087}
+  audioMixer: {fileID: 0}
 --- !u!1 &812985461
 GameObject:
   m_ObjectHideFlags: 0
@@ -2726,6 +2713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f9618aeffbb05e439a4f13dbb0e7c7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resolutionDropdown: {fileID: 0}
   audioMixer: {fileID: 0}
 --- !u!1 &888701158
 GameObject:
@@ -4321,10 +4309,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 771592176}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 606, y: 47}
   m_SizeDelta: {x: 130, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4641,7 +4629,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 881680124}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetVolume
         m_Mode: 4
@@ -4686,7 +4674,7 @@ RectTransform:
   - {fileID: 812985462}
   - {fileID: 1703787480}
   m_Father: {fileID: 771592176}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

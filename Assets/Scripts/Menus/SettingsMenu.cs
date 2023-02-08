@@ -1,33 +1,69 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.UI;
+using UnityEngine;
+using TMPro;
+
 public class SettingsMenu : MonoBehaviour
 {
+    [SerializeField] private TMP_Dropdown resolutionDropdown;
+
     public AudioMixer audioMixer;
 
-    Resolution[] resolutions;
+    private Resolution[] resolutions;
+    private List<Resolution> filteredResolution;
 
-    public void SetVolume(float volume)
+    private float currentRefreshRate;
+    private int currentResolutionIndex = 0;
+    void Start()
     {
-        Debug.Log(volume);
-        audioMixer.SetFloat("Volume", volume);
+        resolutions = Screen.resolutions;
+        filteredResolution = new List<Resolution>();
+
+        resolutionDropdown.ClearOptions();
+        currentRefreshRate = Screen.currentResolution.refreshRate;
+
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            if (resolutions[i].refreshRate == currentRefreshRate)
+            {
+                filteredResolution.Add(resolutions[i]);
+            }
+
+        }
+
+        List<string> options = new List<string>();
+        for (int i = 0; i < filteredResolution.Count; i++)
+        {
+            string resolutionOption = filteredResolution[i].width + "x" + filteredResolution[i].height + " " + filteredResolution[i].refreshRate + " Hz ";
+            options.Add(resolutionOption);
+            if (filteredResolution[i].width == Screen.width && filteredResolution[i].height == Screen.height)
+            {
+                currentResolutionIndex = i;
+            }
+        }
+
+        resolutionDropdown.AddOptions(options);
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
+
     }
 
     public void SetResolution(int resolutionIndex)
     {
-        Resolution resolution = resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        Resolution resolution = filteredResolution[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, true);
     }
+
 
     public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
     }
-
-
-
-
+    public void SetVolume(float volume)
+    {
+        Debug.Log(volume);
+        audioMixer.SetFloat("Volume", volume);
+    }
 
 }

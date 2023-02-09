@@ -21,7 +21,7 @@ public class RaycastController : MonoBehaviour
 
     #region Collisions
     [HideInInspector]
-    public float horizonalRaySpacing;
+    public float horizontalRaySpacing;
     [HideInInspector]
     public float verticalRaySpacing;
     [HideInInspector]
@@ -66,7 +66,7 @@ public class RaycastController : MonoBehaviour
         horizontalRayCount = Mathf.Clamp(horizontalRayCount, 2, int.MaxValue);
         verticalRayCount = Mathf.Clamp(horizontalRayCount, 2, int.MaxValue);
 
-        horizonalRaySpacing = bounds.size.y / (horizontalRayCount - 1);
+        horizontalRaySpacing = bounds.size.y / (horizontalRayCount - 1);
         verticalRaySpacing = bounds.size.x / (verticalRayCount - 1);
     }
 

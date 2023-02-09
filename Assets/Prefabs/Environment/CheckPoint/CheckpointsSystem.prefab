@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5785973910841848457, guid: a6740fdc2efa0b54baedfa0cb1a5d367, type: 3}
+      propertyPath: minHeightForRespawn
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 5785973910841848459, guid: a6740fdc2efa0b54baedfa0cb1a5d367, type: 3}
       propertyPath: m_Name
       value: CheckPoint

@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TestScenes/Anton.unity
     guid: 4ca03d8658b6a1444a9f71bcb41b9bf7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestScenes/Mateusz.unity
     guid: 6d4f36615c05aa946904da0cff98fee1
   m_configObjects:

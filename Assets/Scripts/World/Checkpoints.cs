@@ -16,6 +16,7 @@ public class Checkpoints : MonoBehaviour
 
     public float rayLength = 1000f;
     public float minHeightForRespawn = -20f;
+    public float RespawnHeight;
     
     void Start()
     {
@@ -40,7 +41,7 @@ public class Checkpoints : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(player.transform.position, Vector2.down, rayLength, collisions);
 
             respawnPoint = hit.point;
-            respawnPoint.y += 0.53f;
+            respawnPoint.y += RespawnHeight / 2;
 
             currentRespawnPoint.transform.position = respawnPoint;
         }

@@ -6,7 +6,7 @@ using UnityEngine.InputSystem.XR;
 using UnityEngine.Windows;
 
 [RequireComponent(typeof(Controller2D))]
-public class Player : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     #region Players Vertical Movment
     [Header("Veritcal Movment")]
@@ -79,7 +79,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-
         bool flipSprite = (spriteRenderer.flipX ? (velocity.x > 0.01f) : (velocity.x < -0.01f));
         if (flipSprite)
         {
@@ -110,12 +109,6 @@ public class Player : MonoBehaviour
             velocity.y = 0f;
         }
     }
-
-    /*
-    private void FixedUpdate()
-    {
-        controller.Move(velocity * Time.fixedDeltaTime);
-    }*/
 
     public void XInput(InputAction.CallbackContext context)
     {
@@ -153,3 +146,4 @@ public class Player : MonoBehaviour
         }
     }
 }
+

@@ -1880,7 +1880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 707800030}
   - component: {fileID: 707800031}
-  - component: {fileID: 707800035}
+  - component: {fileID: 707800038}
   - component: {fileID: 707800034}
   - component: {fileID: 707800033}
   - component: {fileID: 707800032}
@@ -1902,7 +1902,7 @@ Transform:
   m_GameObject: {fileID: 707800029}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.21, y: -2.05, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1951,7 +1951,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: da7b5e4779482ed478296c5ef6b0c4df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -2019,9 +2019,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a9ce3366ceee24dbd6d7d49bc17a52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalRayCount: 4
-  verticalRayCount: 4
-  horizonalRaySpacing: 0
+  horizontalRayCount: 8
+  verticalRayCount: 8
+  horizontalRaySpacing: 0
   verticalRaySpacing: 0
   collider: {fileID: 0}
   collisionMask:
@@ -2030,34 +2030,6 @@ MonoBehaviour:
   player: {fileID: 0}
   maxClimgAngle: 80
   maxDescendAngle: 75
---- !u!114 &707800035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 707800029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 783844ca32a7e9d4583af221390512de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxJumpHeight: 4
-  minJumpHeight: 1
-  timeToJumpApex: 0.5
-  maxJumpVelocity: 0
-  minJumpVelocity: 0
-  accelerationTimeAirborne: 0.2
-  accelerationTimeGrounded: 0.08
-  moveSpeed: 9.12
-  velocityXSmothing: 0
-  xInput: 0
-  gravity: 0
-  velocity: {x: 0, y: 0}
-  boxVelocity: 0
-  box: {fileID: 0}
-  controller: {fileID: 0}
-  isControlling: 0
 --- !u!114 &707800036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2085,8 +2057,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 707800035}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+      - m_Target: {fileID: 707800038}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: XInput
         m_Mode: 0
         m_Arguments:
@@ -2109,8 +2081,8 @@ MonoBehaviour:
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 707800035}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+      - m_Target: {fileID: 707800038}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: YInput
         m_Mode: 0
         m_Arguments:
@@ -2208,6 +2180,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &707800038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707800029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b4c9a3a7bc163640a4cba0dcfbe240e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxJumpHeight: 4
+  minJumpHeight: 2
+  timeToJumpApex: 0.4
+  maxJumpVelocity: 0
+  minJumpVelocity: 0
+  accelerationTimeAirborne: 0.2
+  accelerationTimeGrounded: 0.1
+  moveSpeed: 6
+  velocityXSmothing: 0
+  xInput: 0
+  gravity: 0
+  velocity: {x: 0, y: 0}
+  boxVelocity: 0
+  box: {fileID: 0}
+  controller: {fileID: 0}
+  isControlling: 0
 --- !u!1 &783538272
 GameObject:
   m_ObjectHideFlags: 0

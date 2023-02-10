@@ -8,13 +8,13 @@ public class CheckpointSystem : MonoBehaviour
     public Transform currentRespawnPoint;
     public GameObject player;
 
-    public Player playerVelocity;
+    public PlayerMovement playerVelocity;
 
     private void Start()
     {
         currentRespawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform;
         player = GameObject.FindGameObjectWithTag("Player");
-        playerVelocity = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        playerVelocity = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     public void ResetLevel(InputAction.CallbackContext context)

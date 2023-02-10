@@ -42,7 +42,7 @@ public class BoxMovement : MonoBehaviour
 
     void Update()
     {
-        gravity = player.GetComponent<Player>().gravity;
+        gravity = player.GetComponent<PlayerMovement>().gravity;
 
         velocity.y = Mathf.Clamp(velocity.y, -20, 20);
         velocity.y += gravity * Time.deltaTime;

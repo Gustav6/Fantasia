@@ -9,7 +9,7 @@ public class Checkpoints : MonoBehaviour
 {
     public Transform currentRespawnPoint;
     public GameObject player;
-    public Player playerVelocity;
+    public PlayerMovement playerVelocity;
 
     public Vector3 respawnPoint;   
     public LayerMask collisions;
@@ -21,7 +21,7 @@ public class Checkpoints : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         currentRespawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform;
-        playerVelocity = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        playerVelocity = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     private void Update()

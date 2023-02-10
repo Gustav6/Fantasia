@@ -18,22 +18,22 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("How long it takes the player to reach the variabel jumpHeight")]
     [SerializeField] float timeToJumpApex = .4f;
     [Tooltip("The maximum amount of jump speed for the player")]
-    [SerializeField] float maxJumpVelocity;
+    public float maxJumpVelocity;
     [Tooltip("The minimum amount of jump speed for the player")]
-    [SerializeField] float minJumpVelocity;
+    public float minJumpVelocity;
     #endregion
 
     #region Players Horizontal Input & Movment
     [Header("Horizontal Movment")]
 
     [Tooltip("The acceleration then airborne on the x axis")]
-    [SerializeField] float accelerationTimeAirborne = .2f;
+    public float accelerationTimeAirborne = .2f;
     [Tooltip("The acceleration when grounded on the x axis")]
-    [SerializeField] float accelerationTimeGrounded = .1f;
+    public float accelerationTimeGrounded = .1f;
     [Tooltip("The top speed on the x axis")]
     [SerializeField] float moveSpeed = 6f;
     [Tooltip("Acceleration for the player on the x axis")]
-    [SerializeField] float velocityXSmothing;
+    public float velocityXSmothing;
     // players input on the x axis
     public float xInput;
     #endregion
@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
     // A variabel to call the script Controller2D
     public Controller2D controller;
 
+    // A bool to check if the player is controlling a box
     public bool isControlling = false;
 
     void Start()
@@ -136,11 +137,14 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+
     public void Controll(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
             isControlling = !isControlling;
+
+            print(isControlling);
 
             xInput = 0f;
         }

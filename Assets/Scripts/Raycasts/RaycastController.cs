@@ -6,17 +6,17 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class RaycastController : MonoBehaviour
 {
-    #region Raycasts from player
-    [Header("Raycasts from player")]
-
-    [Tooltip("The amount of raycasts coming out from players sides")]
-    public int horizontalRayCount = 4;
-    [Tooltip("The amount of raycasts coming out from players top and bottom")]
-    public int verticalRayCount = 4;
+    #region Raycasts from player    
+    [HideInInspector]
+    public int horizontalRayCount;
+    [HideInInspector]
+    public int verticalRayCount;
 
     // Skin width means that raycast start a little inside player, so that collisions dont get messed up
     [HideInInspector]
     public const float skinWidth = .015f;
+
+    const float dstBetweenRays = .35f;
     #endregion
 
     #region Collisions
@@ -63,8 +63,11 @@ public class RaycastController : MonoBehaviour
         Bounds bounds = collider.bounds;
         bounds.Expand(skinWidth * -2);
 
-        horizontalRayCount = Mathf.Clamp(horizontalRayCount, 2, int.MaxValue);
-        verticalRayCount = Mathf.Clamp(horizontalRayCount, 2, int.MaxValue);
+        float boundsWidth = bounds.size.x;
+        float boundsHeight = bounds.size.y;
+
+        horizontalRayCount = Mathf.RoundToInt(boundsHeight / dstBetweenRays);
+        verticalRayCount = Mathf.RoundToInt(boundsWidth / dstBetweenRays);  
 
         horizontalRaySpacing = bounds.size.y / (horizontalRayCount - 1);
         verticalRaySpacing = bounds.size.x / (verticalRayCount - 1);

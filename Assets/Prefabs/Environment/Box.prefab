@@ -100,14 +100,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a9ce3366ceee24dbd6d7d49bc17a52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalRayCount: 4
-  verticalRayCount: 4
-  horizonalRaySpacing: 0
+  horizontalRayCount: 8
+  verticalRayCount: 8
+  horizontalRaySpacing: 0
   verticalRaySpacing: 0
   collider: {fileID: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 960
+  player: {fileID: 0}
   maxClimgAngle: 80
   maxDescendAngle: 75
 --- !u!114 &3763286427825089996

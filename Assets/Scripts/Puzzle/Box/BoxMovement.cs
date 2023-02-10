@@ -22,8 +22,6 @@ public class BoxMovement : MonoBehaviour
 
     [Tooltip("How high the box movements speed will be")]
     public float boxMoveSpeed = 5f;
-    [Tooltip("How long the box will will move after player doesnt collide with it")]
-    public float deAcceleration = 15f;
     #endregion
 
     // A call for the player so i can refrence the player and get the gravity
@@ -38,12 +36,11 @@ public class BoxMovement : MonoBehaviour
     {
         controller = GetComponent<Controller2D>();
         player = GameObject.FindGameObjectWithTag("Player");
+        gravity = player.GetComponent<PlayerMovement>().gravity;
     }
 
     void Update()
     {
-        gravity = player.GetComponent<PlayerMovement>().gravity;
-
         velocity.y = Mathf.Clamp(velocity.y, -20, 20);
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
@@ -80,12 +77,6 @@ public class BoxMovement : MonoBehaviour
         }
     }
 
-    /*
-    private void FixedUpdate()
-    {
-        controller.Move(velocity * Time.fixedDeltaTime);
-    }*/
-
     public void MoveBox()
     {
         if (player.GetComponent<Controller2D>().collisions.right)
@@ -97,11 +88,4 @@ public class BoxMovement : MonoBehaviour
             velocity.x = -boxMoveSpeed;
         }
     }
-
-    /*
-    public void MoveBox(float direction)
-    {
-        velocity.x = direction;
-        controller.Move(velocity * Time.deltaTime);
-    }*/
 }

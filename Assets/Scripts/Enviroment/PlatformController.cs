@@ -19,8 +19,10 @@ public class PlatformController : RaycastController
     float percentBetweenWaypoints;
     float nextMoveTime;
 
+    bool isControlling;
+
     List<PassengerMovement> passengerMovement;
-    Dictionary<Transform, Controller2D> passengerDictionary = new Dictionary<Transform, Controller2D>();
+    Dictionary<Transform, Controller2D> passengerDictionary = new();
 
     public override void Start()
     {
@@ -35,6 +37,17 @@ public class PlatformController : RaycastController
 
     void Update()
     {
+        isControlling = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().isControlling;
+
+        if (isControlling)
+        {
+
+        }
+        else if (!isControlling)
+        {
+
+        }
+
         UpdateRaycastOrigins();
 
         Vector3 velocity = CalculatePlatfromMovement();
@@ -105,7 +118,7 @@ public class PlatformController : RaycastController
 
     void CalculatePassengerMovement(Vector3 velocity)
     {
-        HashSet<Transform> movedPassengers = new HashSet<Transform>();
+        HashSet<Transform> movedPassengers = new();
         passengerMovement = new List<PassengerMovement>();
 
         float directionX = Mathf.Sign(velocity.x);

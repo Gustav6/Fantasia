@@ -7,6 +7,7 @@ TagManager:
   - Box
   - ControllBox
   - PressurePlate
+  - InvisblePlatform
   layers:
   - Default
   - TransparentFX

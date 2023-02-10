@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CloudPressureplateLight : MonoBehaviour
 {
-    public Light myLight;
+    public Light Light;
     public Collider2D platfromCollider;
     public SpriteRenderer platform;
     public SpriteRenderer pushBoxText;
@@ -13,7 +13,7 @@ public class CloudPressureplateLight : MonoBehaviour
     {
         if (collisions.gameObject.tag == "Player" || collisions.gameObject.tag == "Box")
         {
-            myLight.color = Color.green;
+            Light.color = Color.green;
             Debug.Log("Color Switch");
             GameObject.FindGameObjectWithTag("InvisblePlatform").GetComponent<CapsuleCollider2D>().enabled = true;
             platform.color = new Color(1f, 1f, 1f, 1f);
@@ -25,7 +25,7 @@ public class CloudPressureplateLight : MonoBehaviour
     {
         if (collisions.gameObject.tag == "Player" || collisions.gameObject.tag == "Box")
         {
-            myLight.color = Color.red;
+            Light.color = Color.red;
             Debug.Log("Color Switch");
             GameObject.FindGameObjectWithTag("InvisblePlatform").GetComponent<CapsuleCollider2D>().enabled = false;
             platform.color = new Color(1f, 1f, 1f, .5f);

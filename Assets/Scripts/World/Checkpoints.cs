@@ -10,6 +10,7 @@ public class Checkpoints : MonoBehaviour
     public Transform currentRespawnPoint;
     public GameObject player;
     public PlayerMovement playerVelocity;
+    public SpriteRenderer checkpointLight;
 
     public Vector3 respawnPoint;   
     public LayerMask collisions;
@@ -44,6 +45,9 @@ public class Checkpoints : MonoBehaviour
             respawnPoint.y += RespawnHeight / 2;
 
             currentRespawnPoint.transform.position = respawnPoint;
+            checkpointLight.color = Color.green;
+
+
         }
     }
 }

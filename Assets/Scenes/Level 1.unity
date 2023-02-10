@@ -3061,6 +3061,7 @@ MonoBehaviour:
   myLight: {fileID: 1278474926}
   platfromCollider: {fileID: 933652310}
   platform: {fileID: 933652311}
+  pushBoxText: {fileID: 1459003166}
 --- !u!58 &1278474929
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3076,7 +3077,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.014728546, y: 0}
   serializedVersion: 2
-  m_Radius: 0.81912214
+  m_Radius: 1.073734
 --- !u!1 &1300628086
 GameObject:
   m_ObjectHideFlags: 0
@@ -3200,7 +3201,7 @@ GameObject:
   - component: {fileID: 1459003167}
   - component: {fileID: 1459003166}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Push Box Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

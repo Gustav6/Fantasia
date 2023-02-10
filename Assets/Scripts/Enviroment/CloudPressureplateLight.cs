@@ -7,6 +7,7 @@ public class CloudPressureplateLight : MonoBehaviour
     public Light myLight;
     public Collider2D platfromCollider;
     public SpriteRenderer platform;
+    public SpriteRenderer pushBoxText;
 
     private void OnTriggerEnter2D(Collider2D collisions)
     {
@@ -16,6 +17,8 @@ public class CloudPressureplateLight : MonoBehaviour
             Debug.Log("Color Switch");
             GameObject.FindGameObjectWithTag("InvisblePlatform").GetComponent<CapsuleCollider2D>().enabled = true;
             platform.color = new Color(1f, 1f, 1f, 1f);
+            pushBoxText.color = new Color(1f, 1f, 1f, .0f);
+
         }
     }
     private void OnTriggerExit2D(Collider2D collisions)

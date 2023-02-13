@@ -62,6 +62,12 @@ public class DialogueManager: MonoBehaviour
         //Går vidare i konverastionen. 
     }
 
+    public void ExitDialogueIfToFarAway()
+    {
+        backroundBox.LeanScale(Vector3.zero, 0.5f).setEaseInOutExpo();
+        isActive = false;
+    }
+
 
     void Start()
     {

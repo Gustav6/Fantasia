@@ -916,7 +916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalRayCount: 4
   verticalRayCount: 4
-  horizonalRaySpacing: 0
+  horizontalRaySpacing: 0
   verticalRaySpacing: 0
   collider: {fileID: 0}
   collisionMask:
@@ -934,17 +934,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 402952417}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 783844ca32a7e9d4583af221390512de, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b4c9a3a7bc163640a4cba0dcfbe240e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxJumpHeight: 4
-  minJumpHeight: 1
-  timeToJumpApex: 0.5
+  minJumpHeight: 2
+  timeToJumpApex: 0.4
   maxJumpVelocity: 0
   minJumpVelocity: 0
   accelerationTimeAirborne: 0.2
-  accelerationTimeGrounded: 0.08
-  moveSpeed: 9.12
+  accelerationTimeGrounded: 0.1
+  moveSpeed: 6
   velocityXSmothing: 0
   xInput: 0
   gravity: 0
@@ -952,6 +952,7 @@ MonoBehaviour:
   boxVelocity: 0
   box: {fileID: 0}
   controller: {fileID: 0}
+  isControlling: 0
 --- !u!212 &402952425
 SpriteRenderer:
   m_ObjectHideFlags: 0

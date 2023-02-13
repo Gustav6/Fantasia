@@ -427,19 +427,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3763286427825089984, guid: edbad2e82ccea9b439d500945b62c084, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3763286427825089984, guid: edbad2e82ccea9b439d500945b62c084, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3763286427825089984, guid: edbad2e82ccea9b439d500945b62c084, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 31.03
+      value: 39.01
       objectReference: {fileID: 0}
     - target: {fileID: 3763286427825089984, guid: edbad2e82ccea9b439d500945b62c084, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -61.65
+      value: -50.61
       objectReference: {fileID: 0}
     - target: {fileID: 3763286427825089984, guid: edbad2e82ccea9b439d500945b62c084, type: 3}
       propertyPath: m_LocalPosition.z
@@ -473,6 +473,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3763286427825089985, guid: edbad2e82ccea9b439d500945b62c084, type: 3}
+      propertyPath: m_Size.x
+      value: 6.7693844
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763286427825089985, guid: edbad2e82ccea9b439d500945b62c084, type: 3}
+      propertyPath: m_Size.y
+      value: 5.20586
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763286427825089985, guid: edbad2e82ccea9b439d500945b62c084, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.2182498
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763286427825089985, guid: edbad2e82ccea9b439d500945b62c084, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.3963804
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763286427825089985, guid: edbad2e82ccea9b439d500945b62c084, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 19.803946
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763286427825089985, guid: edbad2e82ccea9b439d500945b62c084, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 28.01
+      objectReference: {fileID: 0}
     - target: {fileID: 3763286427825089987, guid: edbad2e82ccea9b439d500945b62c084, type: 3}
       propertyPath: m_Name
       value: Box
@@ -480,6 +504,26 @@ PrefabInstance:
     - target: {fileID: 3763286427825089998, guid: edbad2e82ccea9b439d500945b62c084, type: 3}
       propertyPath: collisionMask.m_Bits
       value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763286427825089999, guid: edbad2e82ccea9b439d500945b62c084, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5dbcc80d163e46e4fae4f6aeba862e46, type: 3}
+    - target: {fileID: 3763286427825089999, guid: edbad2e82ccea9b439d500945b62c084, type: 3}
+      propertyPath: m_Color.b
+      value: 0.45026702
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763286427825089999, guid: edbad2e82ccea9b439d500945b62c084, type: 3}
+      propertyPath: m_Color.g
+      value: 0.45026702
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763286427825089999, guid: edbad2e82ccea9b439d500945b62c084, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763286427825089999, guid: edbad2e82ccea9b439d500945b62c084, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edbad2e82ccea9b439d500945b62c084, type: 3}
@@ -2715,14 +2759,6 @@ MonoBehaviour:
     m_ActionId: 2d6f5ba5-2922-4333-aac6-81cf2ce576c1
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: fc2fdb8e-454c-4d17-a043-44d7be1e12b0
-    m_ActionName: Player/Look[/Mouse/delta]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: aa57d354-9185-4576-b210-1455f8dd8665
-    m_ActionName: Player/Fire[/Mouse/leftButton]
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 707800038}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
@@ -2795,7 +2831,19 @@ MonoBehaviour:
     m_ActionId: 12f3473b-6801-4382-aa6d-a8790d80afad
     m_ActionName: Player/Reset[/Keyboard/r]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 707800038}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: Controll
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 37cd0330-cecb-4371-96ae-656fbd85bbec
     m_ActionName: Player/Controll[/Keyboard/1]
   m_NeverAutoSwitchControlSchemes: 0

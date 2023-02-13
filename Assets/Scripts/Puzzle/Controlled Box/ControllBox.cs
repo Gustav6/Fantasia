@@ -12,8 +12,6 @@ public class ControllBox : MonoBehaviour
     #region The Logic For The Controlled Box
     [Header("Logic")]
 
-    [Tooltip("How high the gravity it will be on the box")]
-    public float gravity;
     [Tooltip("What velocity the box has on the x and y axis")]
     public Vector2 velocity;
     #endregion
@@ -34,16 +32,18 @@ public class ControllBox : MonoBehaviour
 
     // A call for the players script so i can reuse variables
     public PlayerMovement playerScript;
+    public InteractDistance interactDistance;
 
     // A variabel to call the script Controller2D
     Controller2D controller;
+
 
     void Start()
     {
         controller = GetComponent<Controller2D>();
         player = GameObject.FindGameObjectWithTag("Player");
-        gravity = player.GetComponent<PlayerMovement>().gravity;
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        interactDistance = GameObject.FindGameObjectWithTag("InteractDistance").GetComponent<InteractDistance>();
     }
 
     void Update()
@@ -59,7 +59,7 @@ public class ControllBox : MonoBehaviour
         }
 
         velocity.y = Mathf.Clamp(velocity.y, -20, 20);
-        velocity.y += gravity * Time.deltaTime;
+        velocity.y += playerScript.gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
         if (controller.collisions.above || controller.collisions.below)
@@ -81,14 +81,14 @@ public class ControllBox : MonoBehaviour
         {
             if (context.started && controller.collisions.below)
             {
-                velocity.y = playerScript.maxJumpVelocity;
+                velocity.y = playerScript.maxJumpVelocity / 1.4f;
             }
 
             if (context.canceled)
             {
                 if (velocity.y > playerScript.minJumpVelocity)
                 {
-                    velocity.y = playerScript.minJumpVelocity;
+                    velocity.y = playerScript.minJumpVelocity / 1.4f;
                 }
             }
         }

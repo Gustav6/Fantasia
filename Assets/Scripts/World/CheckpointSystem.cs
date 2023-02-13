@@ -8,13 +8,13 @@ public class CheckpointSystem : MonoBehaviour
     public Transform currentRespawnPoint;
     public GameObject player;
 
-    public PlayerMovement playerVelocity;
+    public PlayerMovement playerScript;
 
     private void Start()
     {
         currentRespawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform;
         player = GameObject.FindGameObjectWithTag("Player");
-        playerVelocity = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     public void ResetLevel(InputAction.CallbackContext context)
@@ -23,8 +23,7 @@ public class CheckpointSystem : MonoBehaviour
         {
             player.transform.position = currentRespawnPoint.position;
 
-            playerVelocity.velocity.y = 0f;
+            playerScript.velocity.y = 0f;
         }
     }
-    
 }

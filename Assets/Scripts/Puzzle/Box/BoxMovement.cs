@@ -85,7 +85,7 @@ public class BoxMovement : MonoBehaviour
         }
         else if (player.GetComponent<Controller2D>().collisions.left)
         {
-            velocity.x = -boxMoveSpeed;
+            velocity.x = -boxMoveSpeed; //FFS Studios was here
         }
     }
 }

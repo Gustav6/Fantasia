@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.Windows;
 
-[RequireComponent(typeof(Controller2D))]
+[RequireComponent(typeof(Controller2D))] //FFS Studios was here ;)
 public class PlayerMovement : MonoBehaviour
 {
     #region Players Vertical Movment
@@ -67,11 +67,15 @@ public class PlayerMovement : MonoBehaviour
     // A bool to check if the player is controlling a box
     public bool isControlling = false;
 
+    public InteractDistance interactDistance;
+
     void Start()
     {
         controller = GetComponent<Controller2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+
+        interactDistance = GameObject.FindGameObjectWithTag("InteractDistance").GetComponent<InteractDistance>();
 
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
@@ -86,18 +90,18 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.flipX = !spriteRenderer.flipX;
         }
 
-        //animator.SetBool("Grounded", controller.collisions.below);
+        animator.SetBool("IsGrounded", controller.collisions.below);
 
         if (!controller.collisions.below)
         {
-            //animator.SetFloat("SpeedY", velocity.y);
+            animator.SetFloat("SpeedY", velocity.y);
         }
         else
         {
-            //animator.SetFloat("SpeedY", 0);
+            animator.SetFloat("SpeedY", 0);
         }
 
-        //animator.SetFloat("SpeedX", Mathf.Abs(xInput));
+        animator.SetFloat("SpeedX", Mathf.Abs(xInput));
 
         float targetVelocityX = xInput * moveSpeed;
         velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmothing, (controller.collisions.below) ? accelerationTimeGrounded : accelerationTimeAirborne);
@@ -140,13 +144,18 @@ public class PlayerMovement : MonoBehaviour
 
     public void Controll(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && interactDistance.canControllBox)
         {
-            isControlling = !isControlling;
+            isControlling = true;
 
             print(isControlling);
 
             xInput = 0f;
+        }
+
+        if (context.performed && !interactDistance.canControllBox)
+        {
+            isControlling = false;
         }
     }
 }

@@ -9,7 +9,7 @@ public class Checkpoints : MonoBehaviour
 {
     public Transform currentRespawnPoint;
     public GameObject player;
-    public PlayerMovement playerVelocity;
+    public PlayerMovement playerScript;
     public SpriteRenderer checkpointLight;
 
     public Vector3 respawnPoint;   
@@ -23,7 +23,7 @@ public class Checkpoints : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         currentRespawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform;
-        playerVelocity = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     private void Update()
@@ -31,7 +31,7 @@ public class Checkpoints : MonoBehaviour
         if (player.transform.position.y < minHeightForRespawn)
         {
             player.transform.position = currentRespawnPoint.position;
-            playerVelocity.velocity.y = 0f; 
+            playerScript.velocity.y = 0f; 
         }
     }
 
@@ -46,8 +46,6 @@ public class Checkpoints : MonoBehaviour
 
             currentRespawnPoint.transform.position = respawnPoint;
             checkpointLight.color = Color.green;
-
-
         }
     }
 }

@@ -449,7 +449,7 @@ Transform:
   m_GameObject: {fileID: 560026199}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.7405, y: 0.8685, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 693168834}
@@ -464,9 +464,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 560026199}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c3c79586fd29684e84609bde1e9690d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -768,6 +768,7 @@ MonoBehaviour:
   box: {fileID: 0}
   controller: {fileID: 0}
   isControlling: 0
+  interactDistance: {fileID: 0}
 --- !u!1001 &649208490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -900,6 +901,7 @@ GameObject:
   m_Component:
   - component: {fileID: 693168834}
   - component: {fileID: 693168835}
+  - component: {fileID: 693168836}
   m_Layer: 0
   m_Name: Controlled Box Limit
   m_TagString: Untagged
@@ -946,8 +948,20 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 25, y: 15}
+  m_Size: {x: 20, y: 12}
   m_EdgeRadius: 0
+--- !u!114 &693168836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693168833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cdfa0484610d5d4abc94381e7be5836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &749067216 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7211388099641783111, guid: 146662429c8c11f4194c185ec804c16e, type: 3}
@@ -3264,7 +3278,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577255445}
-  m_LocalRotation: {x: 2.9151e-41, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 3.1842e-41, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.7405, y: 0.8685, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3386,9 +3400,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1733024949}
   - component: {fileID: 1733024950}
+  - component: {fileID: 1733024951}
   m_Layer: 0
   m_Name: Interact Distance
-  m_TagString: Untagged
+  m_TagString: InteractDistance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3434,6 +3449,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &1733024951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733024948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b66beb980956c409aa4926966b4227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canControllBox: 0
 --- !u!1001 &2257066590540373991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3611,6 +3639,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 560026199}
+    - target: {fileID: 7211388099641783129, guid: 146662429c8c11f4194c185ec804c16e, type: 3}
+      propertyPath: controlledBoxSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7211388099641783130, guid: 146662429c8c11f4194c185ec804c16e, type: 3}
       propertyPath: collisionMask.m_Bits
       value: 960

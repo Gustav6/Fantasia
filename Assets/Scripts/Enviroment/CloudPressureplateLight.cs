@@ -8,27 +8,57 @@ public class CloudPressureplateLight : MonoBehaviour
     public Collider2D platfromCollider;
     public SpriteRenderer platform;
     public SpriteRenderer pushBoxText;
+    public GameObject visiblePlatform;
+    public GameObject invisiblePlatform;
+    public GameObject Cube;
+
+    private bool pressurePlateActivation = false;
+    private bool cubeAtPressurePlate = false;
+
+    private void FixedUpdate()
+    {
+        if (pressurePlateActivation == true)
+        {
+            Light.color = Color.green;
+            Debug.Log("Color Switch");
+            visiblePlatform.SetActive(false);
+            invisiblePlatform.SetActive(true);
+            pushBoxText.color = new Color(1f, 1f, 1f, .0f);
+        }
+        else if (pressurePlateActivation == false)
+        {
+            Light.color = Color.red;
+            Debug.Log("Color Switch");
+            visiblePlatform.SetActive(true);
+            invisiblePlatform.SetActive(false);
+        }
+
+    }
 
     private void OnTriggerEnter2D(Collider2D collisions)
     {
         if (collisions.gameObject.tag == "Player" || collisions.gameObject.tag == "Box")
         {
-            Light.color = Color.green;
-            Debug.Log("Color Switch");
-            GameObject.FindGameObjectWithTag("InvisblePlatform").GetComponent<CapsuleCollider2D>().enabled = true;
-            platform.color = new Color(1f, 1f, 1f, 1f);
-            pushBoxText.color = new Color(1f, 1f, 1f, .0f);
+            pressurePlateActivation = true;
+            if (collisions.gameObject.tag == "Box")
+            {
+                cubeAtPressurePlate = true;
+            }
 
         }
+
     }
     private void OnTriggerExit2D(Collider2D collisions)
     {
-        if (collisions.gameObject.tag == "Player" || collisions.gameObject.tag == "Box")
+        if (cubeAtPressurePlate == true)
         {
-            Light.color = Color.red;
-            Debug.Log("Color Switch");
-            GameObject.FindGameObjectWithTag("InvisblePlatform").GetComponent<CapsuleCollider2D>().enabled = false;
-            platform.color = new Color(1f, 1f, 1f, .5f);
+            pressurePlateActivation = true;
         }
+        else
+        {
+            pressurePlateActivation = false;
+        }
+
+           
     }
 }

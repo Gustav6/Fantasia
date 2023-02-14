@@ -9,6 +9,7 @@ TagManager:
   - PressurePlate
   - InvisblePlatform
   - InteractDistance
+  - Dialogue
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Box
   - Ground
   - Controlled Box
-  - 
+  - InvisibleBox
   - 
   - 
   - 

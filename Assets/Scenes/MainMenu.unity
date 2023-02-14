@@ -5192,7 +5192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1432966134}
-  - component: {fileID: 1432966133}
+  - component: {fileID: 1432966135}
   m_Layer: 0
   m_Name: LoadingScene
   m_TagString: Untagged
@@ -5200,19 +5200,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1432966133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1432966132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3abac9b003cb25142a1820ad11debac3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LoadScreen: {fileID: 1095703003}
 --- !u!4 &1432966134
 Transform:
   m_ObjectHideFlags: 0
@@ -5228,6 +5215,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1432966135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432966132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3abac9b003cb25142a1820ad11debac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadScreen: {fileID: 1095703003}
 --- !u!1 &1436446396
 GameObject:
   m_ObjectHideFlags: 0
@@ -6850,16 +6850,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1762462721}
-        m_TargetAssemblyTypeName: MainMenuFunctions, Assembly-CSharp
-        m_MethodName: PlayGame
-        m_Mode: 1
+      - m_Target: {fileID: 1432966135}
+        m_TargetAssemblyTypeName: LoadingScreen, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1852298030

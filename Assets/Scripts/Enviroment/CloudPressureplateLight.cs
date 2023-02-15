@@ -12,8 +12,11 @@ public class CloudPressureplateLight : MonoBehaviour
     public GameObject invisiblePlatform;
     public GameObject Cube;
 
+    [SerializeField] float castRadius;
+
     private bool pressurePlateActivation = false;
-    private bool cubeAtPressurePlate = false;
+
+    [SerializeField] List<GameObject> onPressurePlate = new List<GameObject>();
 
     private void FixedUpdate()
     {
@@ -37,33 +40,36 @@ public class CloudPressureplateLight : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collisions)
     {
+        Physics2D.CircleCastAll(transform.position, castRadius, Vector2.zero);
+
         if (collisions.gameObject.tag == "Player" || collisions.gameObject.tag == "Box")
         {
             pressurePlateActivation = true;
-            if (collisions.gameObject.tag == "Box")
+
+            if (collisions.gameObject.CompareTag("Player") || collisions.gameObject.CompareTag("Box"))
             {
-                cubeAtPressurePlate = true;
-            }
-            else
-            {
-                cubeAtPressurePlate = false;
+                onPressurePlate.Add(collisions.gameObject);
             }
 
-
+            if (onPressurePlate.Count != 0)
+            {
+                pressurePlateActivation = true;
+            }
         }
-
     }
-    private void OnTriggerExit2D(Collider2D collisions)
+
+    void OnTriggerExit2D(Collider2D collisions)
     {
-        if (cubeAtPressurePlate == true)
-        {
-            pressurePlateActivation = true;
-        }
-        else
+        onPressurePlate.Remove(collisions.gameObject);
+
+        if (onPressurePlate.Count == 0)
         {
             pressurePlateActivation = false;
         }
+    }
 
-           
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, castRadius);
     }
 }

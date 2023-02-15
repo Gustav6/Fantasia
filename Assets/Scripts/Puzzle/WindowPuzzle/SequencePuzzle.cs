@@ -12,6 +12,7 @@ public class SequencePuzzle : MonoBehaviour
     public string safeCode;
     public GameObject CodePanel;
     public static bool KeyCodeActive = false;
+    string digit;
     void Update()
     {
         CodeText.text = codeTextValue;
@@ -41,6 +42,12 @@ public class SequencePuzzle : MonoBehaviour
             
         }
 
+        if (Input.GetKey(KeyCode.Backspace) && IsAtDoor == true)
+        {
+            codeTextValue = "";
+        }
+
+
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -66,4 +73,5 @@ public class SequencePuzzle : MonoBehaviour
         codeTextValue += digit;
     }
 
+    
 }

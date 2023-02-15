@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject MenuUI;
     public GameObject SettingsUI;
     public GameObject CodePanel;
+    public GameObject DialogueUI;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -24,6 +25,8 @@ public class PauseMenu : MonoBehaviour
                 Pause();
                 Debug.Log("Pausing Game");
                 CodePanel.SetActive(false);
+                
+
             }
 
         }
@@ -35,6 +38,7 @@ public class PauseMenu : MonoBehaviour
         SettingsUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        DialogueUI.SetActive(true);
 
     }
 
@@ -43,6 +47,7 @@ public class PauseMenu : MonoBehaviour
         MenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        DialogueUI.SetActive(false);
     }
 
     public void LoadMenu()

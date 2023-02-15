@@ -44,6 +44,11 @@ public class CloudPressureplateLight : MonoBehaviour
             {
                 cubeAtPressurePlate = true;
             }
+            else
+            {
+                cubeAtPressurePlate = false;
+            }
+
 
         }
 

@@ -15,8 +15,10 @@ public class SettingsMenu : MonoBehaviour
 
     private float currentRefreshRate;
     private int currentResolutionIndex = 0;
+
     void Start()
     {
+
         resolutions = Screen.resolutions;
         filteredResolution = new List<Resolution>();
 

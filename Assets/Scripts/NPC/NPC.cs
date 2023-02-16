@@ -7,7 +7,7 @@ public class NPC : MonoBehaviour
 {
     public DialogueTrigger trigger;
     public DialogueManager begin;
-    public ChickenTalking triggerChicken;
+    public Animator animator;
 
    
     private void OnTriggerEnter2D(Collider2D collision)
@@ -15,7 +15,8 @@ public class NPC : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") == true)
         {
             trigger.startDialogue();
-        
+            animator.SetBool("ChickenAppear", true);
+            
         }   
         
     }
@@ -24,7 +25,7 @@ public class NPC : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") == true)
         {
                 begin.ExitDialogueIfToFarAway();
-              
+            animator.SetBool("ChickenDisapear", true);
         }
     }
 }

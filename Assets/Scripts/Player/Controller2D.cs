@@ -56,6 +56,7 @@ public class Controller2D : RaycastController
     {
         float directionX = Mathf.Sign(moveAmount.x);
         float rayLength = Mathf.Abs(moveAmount.x) + skinWidth;
+        bool isPushingBox = false;
 
         for (int i = 0; i < horizontalRayCount; i++)
         {
@@ -63,10 +64,12 @@ public class Controller2D : RaycastController
             rayOrigin += Vector2.up * (horizontalRaySpacing * i);
 
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * directionX, rayLength, collisionMask);
-
             if (hit && hit.collider.gameObject.CompareTag("Box"))
             {
                 hit.collider.GetComponent<BoxMovement>().MoveBox();
+
+                isPushingBox = true;
+                animator.SetBool("Push", true);
             }
 
             hit = Physics2D.Raycast(rayOrigin, Vector2.right * directionX, rayLength, collisionMask);
@@ -113,6 +116,11 @@ public class Controller2D : RaycastController
                     collisions.right = directionX == 1f;
                 }
             }
+        }
+
+        if (!isPushingBox && gameObject.CompareTag("Player"))
+        {
+            animator.SetBool("Push", false);
         }
     }
 

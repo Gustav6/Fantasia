@@ -104,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("SpeedX", Mathf.Abs(xInput));
 
         float targetVelocityX = xInput * moveSpeed;
-        velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmothing, (controller.collisions.below) ? accelerationTimeGrounded : accelerationTimeAirborne);
+        velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmothing, (controller.collisions.below) ? accelerationTimeGrounded : accelerationTimeAirborne); 
         velocity.y = Mathf.Clamp(velocity.y, -20, 20);
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);

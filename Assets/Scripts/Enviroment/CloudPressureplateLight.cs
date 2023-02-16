@@ -20,18 +20,16 @@ public class CloudPressureplateLight : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (pressurePlateActivation == true)
+        if (pressurePlateActivation)
         {
             Light.color = Color.green;
-            Debug.Log("Color Switch");
             visiblePlatform.SetActive(false);
             invisiblePlatform.SetActive(true);
             pushBoxText.color = new Color(1f, 1f, 1f, .0f);
         }
-        else if (pressurePlateActivation == false)
+        else if (!pressurePlateActivation)
         {
             Light.color = Color.red;
-            Debug.Log("Color Switch");
             visiblePlatform.SetActive(true);
             invisiblePlatform.SetActive(false);
         }

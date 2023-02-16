@@ -81,14 +81,14 @@ public class ControllBox : MonoBehaviour
         {
             if (context.started && controller.collisions.below)
             {
-                velocity.y = playerScript.maxJumpVelocity / 1.4f;
+                velocity.y = playerScript.maxJumpVelocity;
             }
 
             if (context.canceled)
             {
                 if (velocity.y > playerScript.minJumpVelocity)
                 {
-                    velocity.y = playerScript.minJumpVelocity / 1.4f;
+                    velocity.y = playerScript.minJumpVelocity;
                 }
             }
         }

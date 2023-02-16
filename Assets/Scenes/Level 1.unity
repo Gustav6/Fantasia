@@ -394,8 +394,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14521183}
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 0.0986, y: -0.13, z: 855.7643}
-  m_LocalScale: {x: 3.585139, y: 2.0169833, z: 2.0257108}
+  m_LocalPosition: {x: 0.0986, y: -0.0655, z: 855.7643}
+  m_LocalScale: {x: 3.585139, y: 2.0169833, z: 2.0386753}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -432,7 +432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2771333019415067934, guid: 398dabc749a8042409c90a28747626d5, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2771333019415067934, guid: 398dabc749a8042409c90a28747626d5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2881,7 +2881,7 @@ Transform:
   m_Children:
   - {fileID: 1471797432}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &707800031
 SpriteRenderer:
@@ -3853,7 +3853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 904779042388382921, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.1
+      value: 16.8
       objectReference: {fileID: 0}
     - target: {fileID: 904779042388382921, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3895,134 +3895,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
-    - target: {fileID: 1124879337090605847, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: m_Size.x
-      value: 11.757918
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124879337090605847, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: m_Size.y
-      value: 4.299604
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124879337090605847, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.06874706
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124879337090605847, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.08592367
-      objectReference: {fileID: 0}
-    - target: {fileID: 1124879337090605847, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: m_Direction
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322020591574828365, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: actors.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322020591574828365, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: messages.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322020591574828365, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: actors.Array.data[0].name
-      value: Whale
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322020591574828365, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: actors.Array.data[1].name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322020591574828365, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: actors.Array.data[0].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 91db67d6bbea3db40b6ba1965a3d08f9, type: 3}
-    - target: {fileID: 1322020591574828365, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: actors.Array.data[1].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 0d482a7ca943358428c5fc76f4a2f87f, type: 3}
-    - target: {fileID: 1322020591574828365, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: messages.Array.data[0].message
-      value: Hello stranger!
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322020591574828365, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: messages.Array.data[1].actorId
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322020591574828365, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: messages.Array.data[1].message
-      value: Would you mind helping me?
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322020591574828365, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: messages.Array.data[2].actorId
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322020591574828365, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: messages.Array.data[2].message
-      value: Sure, What is it?
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322020591574828365, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: messages.Array.data[3].actorId
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322020591574828365, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: messages.Array.data[3].message
-      value: I have lost my favourite hat, this hat means a lot to me
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322020591574828365, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: messages.Array.data[4].message
-      value: The wind blew it away
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322020591574828365, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: messages.Array.data[5].actorId
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322020591574828365, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: messages.Array.data[5].message
-      value: If you find the hat I'll pay you handsomely!
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322020591574828365, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: messages.Array.data[6].actorId
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322020591574828365, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: messages.Array.data[6].message
-      value: Okay, I will try my best to get it back
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322020591574828365, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: messages.Array.data[7].message
-      value: Thank you boy!
-      objectReference: {fileID: 0}
     - target: {fileID: 5445091648361266918, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
       propertyPath: begin
       value: 
       objectReference: {fileID: 13579731}
-    - target: {fileID: 9199283198263858355, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 261b6c575d47848408c551179cfbc6ec, type: 3}
-    - target: {fileID: 9199283198263858355, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9199283198263858355, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9199283198263858355, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9199283198263858355, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: m_SortingLayer
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9199283198263858355, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9199283198263858355, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1057003455
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0dfaf10b300a9b448656e27e00dbfcc, type: 3}
 --- !u!1 &970776230
@@ -4191,7 +4067,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1024737333
 Transform:
   m_ObjectHideFlags: 0
@@ -4200,7 +4076,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024737332}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.236, y: -0.1761, z: 10}
+  m_LocalPosition: {x: -0.13, y: 2.19, z: 10}
   m_LocalScale: {x: 6.5203, y: 2.0786, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4580,7 +4456,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1230918948 stripped
 GameObject:
@@ -6175,7 +6051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4606630133634447442, guid: 3c0eebe56fbf64c45a2c89382aa3f370, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4606630133634447442, guid: 3c0eebe56fbf64c45a2c89382aa3f370, type: 3}
       propertyPath: m_LocalPosition.x

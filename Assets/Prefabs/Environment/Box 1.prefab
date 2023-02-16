@@ -107,7 +107,7 @@ MonoBehaviour:
   collider: {fileID: 0}
   collisionMask:
     serializedVersion: 2
-    m_Bits: 1344
+    m_Bits: 1472
   player: {fileID: 0}
   maxClimgAngle: 80
   maxDescendAngle: 75

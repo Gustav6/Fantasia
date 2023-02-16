@@ -12,7 +12,7 @@ public class SequencePuzzle : MonoBehaviour
     public string safeCode;
     public GameObject CodePanel;
     public static bool KeyCodeActive = false;
-    string digit;
+    public GameObject blockade;
     void Update()
     {
         CodeText.text = codeTextValue;
@@ -21,6 +21,8 @@ public class SequencePuzzle : MonoBehaviour
             CodePanel.SetActive(false);
             codeTextValue = "";
             Debug.Log("gg ez");
+            blockade.SetActive(false);
+
         }
 
         if (codeTextValue.Length >= 4)

@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 893f065d19b0cd84aa262f9d943a7e72
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TestScenes/Mateusz.unity
     guid: 6d4f36615c05aa946904da0cff98fee1
+  - enabled: 1
+    path: Assets/Scenes/Heavenly clouds.unity
+    guid: dba56e47cb815194cbd0538b8364e2d5
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 0db014f5aba8202459844520eb97be47, type: 2}

@@ -7,7 +7,7 @@ public class CloudPressureplateLight : MonoBehaviour
     public Light Light;
     public Collider2D platfromCollider;
     public SpriteRenderer platform;
-    public SpriteRenderer pushBoxText;
+    //public SpriteRenderer pushBoxText;
     public GameObject visiblePlatform;
     public GameObject invisiblePlatform;
     public GameObject Cube;
@@ -25,7 +25,7 @@ public class CloudPressureplateLight : MonoBehaviour
             Light.color = Color.green;
             visiblePlatform.SetActive(false);
             invisiblePlatform.SetActive(true);
-            pushBoxText.color = new Color(1f, 1f, 1f, .0f);
+            //pushBoxText.color = new Color(1f, 1f, 1f, .0f);
         }
         else if (!pressurePlateActivation)
         {

@@ -16,7 +16,7 @@ public class NPC : MonoBehaviour
         {
             trigger.startDialogue();
             animator.SetBool("ChickenAppear", true);
-            
+            animator.SetBool("ChickenDisapear", false);
         }   
         
     }
@@ -26,6 +26,7 @@ public class NPC : MonoBehaviour
         {
                 begin.ExitDialogueIfToFarAway();
             animator.SetBool("ChickenDisapear", true);
+            animator.SetBool("ChickenAppear", false);
         }
     }
 }

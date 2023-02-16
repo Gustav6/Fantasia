@@ -10,11 +10,13 @@ public class ChickenTalking : MonoBehaviour
     public void chickenIdle()
     {
         animator.SetBool("ChickenIdle", true);
+        animator.SetBool("ChickenGone", false);
     }
 
     public void chickenGone()
     {
         animator.SetBool("ChickenGone", true);
+        animator.SetBool("ChickenIdle", false);
     }
 
 

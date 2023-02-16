@@ -36,8 +36,8 @@ public class UpAndDownBackround : MonoBehaviour
 		if (facingRight)
 			MoveRight();
 		else
-			MoveLeft();
-	}
+			MoveLeft();	
+    }
 
 	void CheckWhereToFace()
 	{

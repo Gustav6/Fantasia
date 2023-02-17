@@ -3718,8 +3718,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1709118947}
   - component: {fileID: 1709118946}
-  - component: {fileID: 1709118945}
   - component: {fileID: 1709118944}
+  - component: {fileID: 1709118948}
   m_Layer: 0
   m_Name: KeyPad
   m_TagString: Untagged
@@ -3743,32 +3743,6 @@ MonoBehaviour:
   safeCode: 6942
   CodePanel: {fileID: 2143252031}
   blockade: {fileID: 48652954}
---- !u!61 &1709118945
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709118943}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!212 &1709118946
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3829,13 +3803,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709118943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -125.84, y: 16.99, z: 0}
+  m_LocalPosition: {x: -125.84, y: 16, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1709118948
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709118943}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1712685531
 GameObject:
   m_ObjectHideFlags: 0
@@ -4538,6 +4528,62 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1540929057}
     m_Modifications:
+    - target: {fileID: 4292380607152051783, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1709118944}
+    - target: {fileID: 4292380607152051783, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddDigit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292380607358850206, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1709118944}
+    - target: {fileID: 4292380607358850206, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddDigit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292380607410653550, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1709118944}
+    - target: {fileID: 4292380607410653550, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddDigit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292380607657552581, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1709118944}
+    - target: {fileID: 4292380607657552581, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddDigit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292380607774007819, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1709118944}
+    - target: {fileID: 4292380607774007819, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddDigit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292380607931998470, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1709118944}
+    - target: {fileID: 4292380607931998470, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddDigit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292380608264699686, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1709118944}
+    - target: {fileID: 4292380608264699686, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddDigit
+      objectReference: {fileID: 0}
     - target: {fileID: 4292380608411453123, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4625,6 +4671,22 @@ PrefabInstance:
     - target: {fileID: 4292380608411453132, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}
       propertyPath: m_Name
       value: Passcode
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292380608479207576, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1709118944}
+    - target: {fileID: 4292380608479207576, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddDigit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292380608961727903, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1709118944}
+    - target: {fileID: 4292380608961727903, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddDigit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 238085ebc787eb745b73706ea4ecc1d5, type: 3}

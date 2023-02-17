@@ -40,14 +40,12 @@ public class CloudPressureplateLight : MonoBehaviour
     {
         Physics2D.CircleCastAll(transform.position, castRadius, Vector2.zero);
 
-        if (collisions.gameObject.tag == "Player" || collisions.gameObject.tag == "Box")
+        if (collisions.gameObject.CompareTag("Player") || collisions.gameObject.CompareTag("Box"))
         {
             pressurePlateActivation = true;
 
-            if (collisions.gameObject.CompareTag("Player") || collisions.gameObject.CompareTag("Box"))
-            {
-                onPressurePlate.Add(collisions.gameObject);
-            }
+            onPressurePlate.Add(collisions.gameObject);
+            
 
             if (onPressurePlate.Count != 0)
             {

@@ -8,10 +8,11 @@ public class DialogueManager: MonoBehaviour
     #region Dialogue Variables
     private const float V = 0f;
     public Image actorImage;
+    public RawImage chickenImage;
     public Text actorName;
     public Text messageText;
+    public Text eContinueText;
     public RectTransform backroundBox;
-    public Rigidbody2D rb;
     #endregion
 
     #region Current Messages
@@ -83,6 +84,8 @@ public class DialogueManager: MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && isActive)
         {
             NextMessage();
+            eContinueText.enabled = false;
+            chickenImage.enabled = false;
         }
 
         if (isActive)

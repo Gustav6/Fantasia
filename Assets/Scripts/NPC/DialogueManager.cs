@@ -21,6 +21,8 @@ public class DialogueManager: MonoBehaviour
     public static bool isActive = false;
     #endregion
 
+    public PlayerMovement playerScript;
+
     public void OpenDialogue(Message[] messages, Actor[] actors)
     {
         currentActors = actors;
@@ -71,15 +73,21 @@ public class DialogueManager: MonoBehaviour
 
     void Start()
     {
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         backroundBox.transform.localScale = Vector3.zero;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && isActive == true)
+        if (Input.GetKeyDown(KeyCode.E) && isActive)
         {
             NextMessage();
+        }
+
+        if (isActive)
+        {
+            playerScript.xInput = 0;
         }
     }
 

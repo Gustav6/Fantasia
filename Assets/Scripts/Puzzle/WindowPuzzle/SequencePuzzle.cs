@@ -73,6 +73,7 @@ public class SequencePuzzle : MonoBehaviour
     public void AddDigit(string digit)
     {
         codeTextValue += digit;
+        Debug.Log("Digit:" + digit + "added!");
     }
 
     

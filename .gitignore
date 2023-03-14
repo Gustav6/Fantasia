@@ -58,3 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+TestBuild/NewFantasiaTestbuild/Fantasia_Data/Managed/Unity.Burst.Cecil.Rocks.dll
+TestBuild/NewFantasiaTestbuild/Fantasia_Data/Managed/Unity.Burst.Cecil.Mdb.dll
+TestBuild/NewFantasiaTestbuild/Fantasia_Data/Managed/Unity.Burst.Cecil.Pdb.dll

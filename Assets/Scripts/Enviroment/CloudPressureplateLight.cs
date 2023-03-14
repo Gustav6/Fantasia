@@ -25,6 +25,7 @@ public class CloudPressureplateLight : MonoBehaviour
             Light.color = Color.green;
             visiblePlatform.SetActive(false);
             invisiblePlatform.SetActive(true);
+
             //pushBoxText.color = new Color(1f, 1f, 1f, .0f);
         }
         else if (!pressurePlateActivation)
